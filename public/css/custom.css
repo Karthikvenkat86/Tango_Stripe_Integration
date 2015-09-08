@@ -1,0 +1,81 @@
+.my-page-header
+{
+	height:90px;
+}
+.my-image-brand
+{
+	margin:0px 0px 20px;
+	height: 70px;
+}
+.my-button-style
+{
+	margin:15px 20px 0px;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100px;
+}
+.my-sidebar-style
+{
+	height : 200px;
+
+}
+.my-sidebar-button-style
+{
+	margin-top: 15px;
+	width: 100px;
+	margin-left: 20px;
+}
+.my-arrow-style
+{
+	height : 100px;
+    	
+    	margin-top: 135px;	
+
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.my-body-style
+{
+	background-color: rgb(163, 211, 180);
+	width: 100%;
+}
+.my-navbar-heading
+{
+	color: green;
+	margin-left: 250px;
+}
+.my-footer
+{
+	background-color: #F2FAFA;
+	height: 80px;
+	padding-top: 30px;
+}
+.my-textArea
+{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+li{
+	list-style: none;
+	display: inline-block;
+	width: 400px;
+  	padding: 30px;
+}

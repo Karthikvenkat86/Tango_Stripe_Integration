@@ -1,0 +1,36 @@
+.container
+  .row
+      .col-md-2
+        .panel.panel-default.my-sidebar-style.pull-left
+          .panel-body
+            span.btn.btn-default.btn-file.my-sidebar-button-style Upload Zip
+              input(type='file')
+            span.btn.btn-default.btn-file.my-sidebar-button-style Upload Json
+              input(type='file')
+            button.btn.btn-default.my-sidebar-button-style(type='button') Download
+
+      .col-md-10
+        .panel.panel-default
+          .panel-body
+            .row
+              .col-md-4
+                form
+                  .form-group
+                    label(style='padding-left: 30px') Json Data
+                    textarea.form-control.my-textArea(rows='15')
+                    button.btn.btn-info.my-button-style(type='button') Edit
+                    button.btn.btn-primary.my-button-style(type='submit') Submit
+              .col-md-2
+                  img.img-responsive.my-arrow-style(src='/resources/arrow.png', alt='Responsive image')
+              .col-md-3
+                  .form-group
+                    label(style='padding-left: 30px') HTML Code
+                    textarea.form-control.my-textArea(rows='15')
+              .col-md-3
+                .form-group
+                  label(style='padding-left: 30px') CSS Code
+                  textarea.form-control.my-textArea(rows='15')
+                
+
+
+    

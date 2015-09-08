@@ -1,0 +1,25 @@
+extends layout
+block title
+    title Home Page
+block header
+    
+block content
+    h3 This the landing page of user when he clicks on the link which was send to his email with redeem coupon.
+    br
+    br
+    h3 Choose any of the following thrid party coupons to utilize the amount which business person has sent you.
+    p #{response.reward}
+    form(action='/redeemTango', method='POST')
+        ul
+            each item, indx in response.reward
+              li
+                  label
+                    div  #{item}
+                    input(type="radio",name="reward", value="#{item}")                      
+        input(type='hidden', name='custId', value='#{customerId}')
+        input(type='hidden', name='mail' , value='#{email}')
+
+        .control-group
+          h1.controls
+            center
+              button.btn.btn-success(type='Submit') Redeem Now

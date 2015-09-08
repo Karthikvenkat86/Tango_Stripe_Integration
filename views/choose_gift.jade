@@ -1,0 +1,21 @@
+extends layout
+block title
+    title Choose Card Page
+block header
+    
+block content
+  h3 Choose upto 10 cards which you would like to send to your customers.
+  form(action='saveChoosen', method='POST')
+    ul
+      each item, indx in response.brands  
+          li
+            label
+              div #{item.rewards[0].description}
+              input(type="checkbox",name="reward", value=item.rewards[0].sku)                     
+              img.profile_avatar_list(src=item.image_url)
+              div #{item.description}
+    .control-group
+      h1.controls
+        center
+          button.btn.btn-success(type='Submit') Save
+    

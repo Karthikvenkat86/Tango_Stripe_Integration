@@ -1,0 +1,112 @@
+extends layout
+block title
+    title Home Page
+block header
+    
+block content
+    //- form(action='/addcc', method='POST')
+    //-     script.stripe-button(src='https://checkout.stripe.com/checkout.js',
+    //-      data-key='pk_test_1QyEPZhT9k5zhsrtCkG9f35g',
+    //-      data-amount='2000', data-name='', 
+    //-      data-description='2 widgets ($20.00)', 
+    //-      data-image='/resources/images/icons/ico_logo_merun.svg', data-locale='auto')
+
+    form#payment-form.form-horizontal(action='/paycc', method='POST')
+      .row.row-centered
+        .col-md-4.col-md-offset-4
+          .page-header
+            h2.gdfg Secure Payment Form
+          #a_x200.alert.alert-danger(style='display: none;')
+            strong Error!
+            span.payment-errors
+          //- fieldset
+          //-   // Form Name
+          //-   legend Billing Details
+          //-   // Street
+          //-   .form-group
+          //-     label.col-sm-4.control-label(for='textinput') Street
+          //-     .col-sm-6
+          //-       input.address.form-control(type='text', name='street', placeholder='Street')
+          //-   // City
+          //-   .form-group
+          //-     label.col-sm-4.control-label(for='textinput') City
+          //-     .col-sm-6
+          //-       input.city.form-control(type='text', name='city', placeholder='City')
+          //-   // State
+          //-   .form-group
+          //-     label.col-sm-4.control-label(for='textinput') State
+          //-     .col-sm-6
+          //-       input.state.form-control(type='text', name='state', maxlength='65', placeholder='State')
+          //-   // Postcal Code
+          //-   .form-group
+          //-     label.col-sm-4.control-label(for='textinput') Postal Code
+          //-     .col-sm-6
+          //-       input.zip.form-control(type='text', name='zip', maxlength='9', placeholder='Postal Code')
+          //-   // Country
+          //-   .form-group
+          //-     label.col-sm-4.control-label(for='textinput') Country
+          //-     .col-sm-6
+          //-       // input type="text" name="country" placeholder="Country" class="country form-control"
+          //-       input.zip.form-control(name='country', placeholder='Select Country', data-flags='true', data-filter='true')  
+          //-   // Email
+          //-   .form-group
+          //-     label.col-sm-4.control-label(for='textinput') Email
+          //-     .col-sm-6
+          //-       input.email.form-control(type='text', name='email', maxlength='65', placeholder='Email')
+          fieldset
+            legend Card Details
+            // Card Holder Name
+            .form-group
+              label.col-sm-4.control-label(for='textinput') Card Holder's Name
+              .col-sm-6
+                input.card-holder-name.form-control(type='text', name='cardholdername', maxlength='70', placeholder='Card Holder Name')
+            // Card Number
+            .form-group
+              label.col-sm-4.control-label(for='textinput') Card Number
+              .col-sm-6
+                input#cardnumber.card-number.form-control(type='text', maxlength='19', placeholder='Card Number')
+            // Expiry
+            .form-group
+              label.col-sm-4.control-label(for='textinput') Card Expiry Date
+              .col-sm-6
+                .form-inline
+                  select.card-expiry-month.stripe-sensitive.required.form-control(name='select2', data-stripe='exp-month')
+                    option(value='01', selected='selected') 01
+                    option(value='02') 02
+                    option(value='03') 03
+                    option(value='04') 04
+                    option(value='05') 05
+                    option(value='06') 06
+                    option(value='07') 07
+                    option(value='08') 08
+                    option(value='09') 09
+                    option(value='10') 10
+                    option(value='11') 11
+                    option(value='12') 12
+                  span  / 
+                  select.card-expiry-year.stripe-sensitive.required.form-control(name='select2', data-stripe='exp-year')
+                  
+            // CVV
+            .form-group
+              label.col-sm-4.control-label(for='textinput') CVV/CVV2
+              .col-sm-3
+                input#cvv.card-cvc.form-control(type='text', placeholder='CVV', maxlength='4')
+            //- .form-group
+            //-   label.col-sm-4.control-label(for='textinput') Enter Amount for GIFT
+            //-   .col-sm-3
+            //-     input#amount.card-number.form-control(type='text', name='amount', maxlength='70', placeholder='amount in cents')
+            // Important notice
+            .form-group
+              .panel.panel-success
+                .panel-heading
+                  h3.panel-title Important notice
+                .panel-body
+                  p Your card will be charged 10€ after submit.
+                  p
+                    | Your account statement will show the following booking text:
+                    | XXXXXXX
+              // Submit
+              .control-group
+                .controls
+                  center
+                    button.btn.btn-success(type='submit') Pay Now

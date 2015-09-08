@@ -1,0 +1,61 @@
+
+
+extends layout
+block title
+    title Home Page
+block header
+    
+block content
+    form(action='/sendCard', method='POST')
+        .form-group
+              label.col-sm-4.control-label(for='textinput') Customer
+              .col-sm-6
+                input.zip.form-control(type='text', name='customer',  placeholder='Customer')
+        .form-group
+              label.col-sm-4.control-label(for='textinput') account_identifier
+              .col-sm-6
+                input.zip.form-control(type='text', name='account_identifier',placeholder='account_identifier')
+        .form-group
+              label.col-sm-4.control-label(for='textinput') campaign
+              .col-sm-6
+                input.zip.form-control(type='text', name='campaign',placeholder='campaign')
+        .form-group
+              label.col-sm-4.control-label(for='textinput') Recipient name
+              .col-sm-6
+                input.zip.form-control(type='text', name='r_name',placeholder='Recipient name')
+        .form-group
+              label.col-sm-4.control-label(for='textinput') Recipient Email
+              .col-sm-6
+                input.zip.form-control(type='email', name='r_email',placeholder='Recipient Email')
+        .form-group
+              label.col-sm-4.control-label(for='textinput') Sender name
+              .col-sm-6
+                input.zip.form-control(type='text', name='s_name',placeholder='Sender name')
+        .form-group
+              label.col-sm-4.control-label(for='textinput') Sender Email
+              .col-sm-6
+                input.zip.form-control(type='email', name='s_email',placeholder='Sender Email')
+        .form-group
+              label.col-sm-4.control-label(for='textinput') Reward Subject
+              .col-sm-6
+                input.zip.form-control(type='text', name='reward_subject',placeholder='Reward Subject')
+        .form-group
+              label.col-sm-4.control-label(for='textinput') Reward message
+              .col-sm-6
+                input.zip.form-control(type='text', name='reward_message',placeholder='Reward message')
+
+        .control-group
+            h1.controls
+              center
+                button.btn.btn-success(type='Submit') Choose Any Card and Submit
+        ul
+        if response.brands
+            each item, indx in response.brands  
+                li
+                  label
+                    div #{item.rewards[0].description}
+                    input(type="radio",name="reward", value=item.rewards[0].sku)                     
+                    img.profile_avatar_list(src=item.image_url)
+                    div #{item.description}
+        else
+            div #{JSON.stringify(response)}

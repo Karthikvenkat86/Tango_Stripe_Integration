@@ -1,0 +1,24 @@
+extends layout
+block title
+    title Home Page
+block header
+    
+block content
+  .row.row-centered
+    .col-md-4.col-md-offset-4
+      .page-header
+        h2.gdfg Send Gift Card to Customer
+        span.payment-errors
+            form(action='/sendMail', method='POST')
+              fieldset
+                // Form Name
+                legend Please enter one receipient
+                // Street
+                .form-group
+                  label.col-sm-4.control-label(for='') Email Address
+                  .col-sm-6
+                    input.address.form-control(type='email', name='customer_email', placeholder='Email Address')
+                .control-group
+                    h1.controls
+                      center
+                        button.btn.btn-success(type='Submit') Choose Any Card and Submit

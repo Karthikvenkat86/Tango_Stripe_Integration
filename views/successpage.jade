@@ -1,0 +1,17 @@
+extends layout
+block title
+    title Home Page
+block header
+    
+block content
+    h1 #{JSON.stringify(response)}
+    //- .form-group
+    //-   label.col-sm-4.control-label(for='textinput') Tango Number
+    //-   .col-sm-6
+    //-     input.zip.form-control(type='text', name='tangonum', disabled,  placeholder='Customer', value="#{response.reward.number}")
+    //- .form-group
+    //-   label.col-sm-4.control-label(for='textinput') Pin
+    //-   .col-sm-6
+    //-     input.zip.form-control(type='text', name='pin', disabled, placeholder='Customer', value="#{response.reward.pin}")
+        
+	p #{response.reward.pin}
